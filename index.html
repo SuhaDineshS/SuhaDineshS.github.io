@@ -1,9 +1,156 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My Portfolio</title>
-  </head>
-  <body>
-    <h1>Hello! Portfolio is loading...</h1>
-  </body>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Suha Dinesh S — Portfolio</title>
+  <style>
+    :root{
+      --bg:#0b0b0e;--card:#0f1114;--muted:#9aa3b2;--accent:#00e6a8;--glass:rgba(255,255,255,0.03);
+      --mono: 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:var(--mono);background:linear-gradient(180deg,#050506 0%, #0b0b0e 100%);color:#e6eef6}
+    .container{max-width:1100px;margin:36px auto;padding:28px}
+
+    header{display:flex;align-items:center;gap:20px}
+    .logo{font-weight:700;color:var(--accent);font-size:28px}
+    .title{font-size:22px;margin:0}
+    .tag{color:var(--muted);margin-top:6px}
+
+    nav{margin-left:auto}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+    nav a:hover{color:var(--accent)}
+
+    .hero{display:flex;align-items:center;gap:28px;margin-top:26px}
+    .hero-left{flex:1}
+    .hero-right{width:260px;text-align:center}
+    .hero .big{font-size:40px;margin:0}
+    .hero p{color:var(--muted);margin-top:8px}
+
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(4px)}
+    .thumb{height:160px;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--glass)}
+    .thumb img{width:100%;height:100%;object-fit:cover}
+    .card h3{margin:10px 0 6px 0}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag-pill{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(0,0,0,0.25);color:var(--muted)}
+    .card p{color:var(--muted);font-size:14px}
+    .actions{display:flex;gap:8px;margin-top:8px}
+    .btn{padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--accent);text-decoration:none;font-weight:600}
+
+    footer{margin-top:40px;color:var(--muted);text-align:center;padding:20px}
+
+    /* small tweaks */
+    @media (max-width:700px){.hero{flex-direction:column}.hero-right{width:100%}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <div class="logo">Suha Dinesh S</div>
+        <div class="tag" style="margin-top:6px">Game Developer • Unity Developer</div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <h1 class="big">Hello — I make gameplay systems & prototypes.</h1>
+        <p class="tag">I build mechanics, tools and small game prototypes using Unity and C#. This portfolio shows a mix of completed projects and technical demos. (Project section will be filled progressively.)</p>
+      </div>
+      <div class="hero-right card">
+        <div style="font-size:13px;color:var(--muted)">GitHub</div>
+        <div style="margin-top:8px"><a class="btn" href="https://github.com/SuhaDineshS" target="_blank">github.com/SuhaDineshS</a></div>
+        <div style="margin-top:12px;color:var(--muted);font-size:13px">Resume</div>
+        <div style="margin-top:8px"><a class="btn" href="#" onclick="alert('Add your resume link to the HTML after uploading')">Download</a></div>
+      </div>
+    </section>
+
+    <h2 id="projects" style="margin-top:36px">Projects</h2>
+    <div class="projects">
+
+      <!-- Placeholder Project Card (Shadow Game Prototype) -->
+      <article class="card">
+        <div class="thumb">
+          <!-- using image uploaded in this conversation as a temporary thumbnail -->
+          <img src="/mnt/data/113018ab-3ba5-4e05-94c3-5799f63a03e3.png" alt="project thumbnail">
+        </div>
+        <h3>Shadow Prototype</h3>
+        <div class="tags" style="margin-top:6px"><span class="tag-pill">Unity</span><span class="tag-pill">C#</span><span class="tag-pill">Prototype</span></div>
+        <p style="margin-top:8px">Top-slanted isometric puzzle where the player moves through shadows. Single polished vertical-slice level.</p>
+        <div class="actions">
+          <a class="btn" href="#">View details</a>
+          <a class="btn" href="#">Play</a>
+        </div>
+      </article>
+
+      <!-- Placeholder Project Card (Ragdoll Physics System) -->
+      <article class="card">
+        <div class="thumb">
+          <img src="/mnt/data/113018ab-3ba5-4e05-94c3-5799f63a03e3.png" alt="project thumbnail">
+        </div>
+        <h3>Ragdoll Blending System</h3>
+        <div class="tags" style="margin-top:6px"><span class="tag-pill">Unity Physics</span><span class="tag-pill">Animation</span><span class="tag-pill">AI</span></div>
+        <p style="margin-top:8px">Click-to-ragdoll with impact force, timed recovery and blend back to animation. Good demo of integrating physics with AI and animation systems.</p>
+        <div class="actions">
+          <a class="btn" href="#">View details</a>
+          <a class="btn" href="#">Code</a>
+        </div>
+      </article>
+
+      <!-- Example Course Project -->
+      <article class="card">
+        <div class="thumb">
+          <img src="/mnt/data/113018ab-3ba5-4e05-94c3-5799f63a03e3.png" alt="project thumbnail">
+        </div>
+        <h3>3D Shooter (Course)</h3>
+        <div class="tags" style="margin-top:6px"><span class="tag-pill">Unity</span><span class="tag-pill">C#</span><span class="tag-pill">Gameplay</span></div>
+        <p style="margin-top:8px">Course project reworked with improved recoil, enemy behavior and polish to showcase gameplay programming skills.</p>
+        <div class="actions">
+          <a class="btn" href="#">View</a>
+          <a class="btn" href="#">Play</a>
+        </div>
+      </article>
+
+    </div>
+
+    <section id="about" style="margin-top:40px">
+      <h2>About</h2>
+      <div class="card" style="margin-top:12px;padding:16px">
+        <p style="color:var(--muted)">Hi — I\'m <strong>Suha Dinesh S</strong>. I focus on building gameplay systems in Unity. I enjoy making mechanics that feel good and creating tools that speed up iteration. This portfolio will be updated as I add polished projects and technical demos.</p>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:28px">
+      <h2>Contact</h2>
+      <div class="card" style="margin-top:12px;padding:16px;display:flex;flex-direction:column;gap:8px">
+        <div style="color:var(--muted)">Email</div>
+        <div><a class="btn" href="mailto:you@example.com">you@example.com</a></div>
+        <div style="color:var(--muted);margin-top:8px">Other</div>
+        <div style="color:var(--muted)">GitHub: <a href="https://github.com/SuhaDineshS" style="color:var(--accent)">SuhaDineshS</a></div>
+      </div>
+    </section>
+
+    <footer>
+      Built with ♥ — SuhaDineshS
+    </footer>
+  </div>
+
+  <script>
+    // small helper: open placeholder links
+    document.addEventListener('click', e => {
+      if (e.target.matches('.btn') && e.target.getAttribute('href') === '#'){
+        e.preventDefault();
+        alert('Replace this link with your project page or itch.io build after uploading your files.');
+      }
+    })
+  </script>
+</body>
 </html>
+

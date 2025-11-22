@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ragdoll System — Suha Dinesh S</title>
+
+  <style>
+    :root{
+      --bg:#0b0b0e;--card:#0f1114;--muted:#9aa3b2;--accent:#00e6a8;--glass:rgba(255,255,255,0.03);
+      --mono:'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    body{
+      margin:0; font-family:var(--mono);
+      background:linear-gradient(180deg,#050506 0%, #0b0b0e 100%);
+      color:#e6eef6;
+    }
+    .container{
+      max-width:900px; margin:40px auto; padding:20px;
+    }
+
+    h1{ font-size:32px; margin-bottom:10px; }
+    h2{ margin-top:40px; }
+
+    p{ color:var(--muted); line-height:1.6; }
+
+    .card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,0.05);
+      border-radius:12px;
+      padding:20px;
+      margin-top:16px;
+      backdrop-filter:blur(4px);
+    }
+
+    video{
+      width:100%;
+      border-radius:12px;
+      margin-top:12px;
+      object-fit:contain;
+      background:#000;
+    }
+
+    .back-btn{
+      display:inline-block;
+      margin-top:30px;
+      padding:10px 14px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.08);
+      text-decoration:none;
+      color:var(--accent);
+      font-weight:600;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <h1>Ragdoll Blending System</h1>
+    <p>A physics-driven character system demonstrating limb-based impacts, ragdoll takeover, and animation recovery.</p>
+
+    <!-- Section 1: Ragdoll Explanation -->
+    <h2>1. Click-to-Ragdoll with Limb-Specific Impacts</h2>
+    <div class="card">
+      <p>
+        The zombie normally walks toward the camera with AI-driven locomotion.  
+        When the player clicks on the character, the system raycasts to find the exact limb hit.  
+        A directional force is then applied specifically to that rigidbody — not the root — producing natural,
+        physically accurate reactions.
+        <br><br>
+        The character collapses fully into ragdoll mode, letting Unity’s physics simulation take over until recovery.
+      </p>
+
+      <!-- Thumbnail video -->
+      <video autoplay loop muted playsinline src="assets/Ragdoll1.mp4"></video>
+    </div>
+
+    <!-- Section 2: Recovery System -->
+    <h2>2. Recovery: Detecting Fall Direction & Standing Up</h2>
+    <div class="card">
+      <p>
+        After a short configurable delay, the system evaluates whether the character has fallen
+        face-up or face-down by checking the ragdoll's hip orientation.
+        <br><br>
+        Based on this, it selects and plays the appropriate stand-up animation clip.
+        A smooth blend drives the transition from ragdoll physics back into animator control,
+        allowing the zombie to resume walking and continue chasing the player.
+      </p>
+
+      <!-- Full-resolution video from GitHub Release -->
+      <video autoplay loop muted playsinline
+             src="https://github.com/SuhaDineshS/SuhaDineshS.github.io/releases/download/v1.0.0/Ragdoll2.mp4">
+      </video>
+    </div>
+
+    <!-- Back link -->
+    <a href="index.html#projects" class="back-btn">← Back to Projects</a>
+
+  </div>
+</body>
+</html>

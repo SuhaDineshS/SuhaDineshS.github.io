@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shadow Path Mechanic — Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="project-header">
+    <h1>Shadow Path Mechanic</h1>
+    <p>A puzzle exploration prototype where the player can only move inside shadows.</p>
+  </header>
+
+  <section class="project-section">
+    <h2>Overview</h2>
+    <p>
+      Shadow Path is an experimental mechanic prototype built in Unity. The core idea: the player can move
+      <strong>only inside shadows</strong>, and must manipulate the world to cast new paths. This demo consists of three
+      small handcrafted levels, each introducing a new mechanic layered on top of the previous one.
+    </p>
+  </section>
+
+  <!-- Level 1 -->
+  <section class="project-section">
+    <h2>Level 1 — Rotating Stage & Time‑of‑Day Control</h2>
+    <p>
+      The first level focuses on teaching the player how shadow-based traversal works. The core interactions are:
+    </p>
+    <ul>
+      <li><strong>A / D</strong>: Rotate the entire stage to change how obstacles cast shadows.</li>
+      <li><strong>W / S</strong>: Shift the time of day, altering the sun angle and shadow length.</li>
+      <li>Movement is allowed only inside the shaded areas.</li>
+    </ul>
+
+    <div class="video-container">
+      <video autoplay muted loop playsinline>
+        <source src="assets/shadow_level1.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <p>
+      This level demonstrates the foundational logic: shadow projection, directional light manipulation, and
+      boundary-based player movement.
+    </p>
+  </section>
+
+  <!-- Level 2 -->
+  <section class="project-section">
+    <h2>Level 2 — Advanced Shadow Navigation</h2>
+    <p>
+      In the second level, the environment layout emphasizes a different use of the mechanic. Instead of simple
+      rotations, the player must strategically combine lighting changes and environmental geometry to reach distant
+      platforms.
+    </p>
+
+    <div class="video-container">
+      <video autoplay muted loop playsinline>
+        <source src="assets/shadow_level2.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <p>
+      This level showcases more complex shadow logic and how simple geometry can create emergent puzzle paths.
+    </p>
+  </section>
+
+  <!-- Level 3 -->
+  <section class="project-section">
+    <h2>Level 3 — Expanding Tower Mechanic</h2>
+    <p>
+      The final level introduces a new system: an <strong>expandable tower</strong> that rises to connect shadow paths.
+      The player must extend or contract the tower while adjusting the sunlight angle to cast a continuous shaded
+      walkway leading to the goal.
+    </p>
+
+    <div class="video-container">
+      <video autoplay muted loop playsinline>
+        <source src="assets/shadow_level3.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <p>
+      This demonstrates the layering of mechanics and system interactions — dynamic geometry + real‑time lighting.
+    </p>
+  </section>
+
+  <footer class="project-footer">
+    <a href="index.html" class="btn">Back to Portfolio</a>
+  </footer>
+</body>
+</html>

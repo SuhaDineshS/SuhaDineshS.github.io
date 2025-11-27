@@ -1,92 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shadow Path Mechanic — Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shadow Path Prototype — Suha Dinesh S</title>
+
+  <style>
+    :root{
+      --bg:#0b0b0e;--card:#0f1114;--muted:#9aa3b2;--accent:#00e6a8;--glass:rgba(255,255,255,0.03);
+      --mono:'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    body{
+      margin:0; font-family:var(--mono);
+      background:linear-gradient(180deg,#050506 0%, #0b0b0e 100%);
+      color:#e6eef6;
+    }
+
+    .container{
+      max-width:900px; margin:40px auto; padding:20px;
+    }
+
+    h1{ font-size:32px; margin-bottom:10px; }
+    h2{ margin-top:40px; }
+
+    p{ color:var(--muted); line-height:1.6; }
+
+    .card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,0.05);
+      border-radius:12px;
+      padding:20px;
+      margin-top:16px;
+      backdrop-filter:blur(4px);
+    }
+
+    video{
+      width:100%;
+      border-radius:12px;
+      margin-top:12px;
+      object-fit:contain;
+      background:#000;
+    }
+
+    .back-btn{
+      display:inline-block;
+      margin-top:30px;
+      padding:10px 14px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.08);
+      text-decoration:none;
+      color:var(--accent);
+      font-weight:600;
+    }
+  </style>
 </head>
+
 <body>
-  <header class="project-header">
-    <h1>Shadow Path Mechanic</h1>
-    <p>A puzzle exploration prototype where the player can only move inside shadows.</p>
-  </header>
+  <div class="container">
 
-  <section class="project-section">
-    <h2>Overview</h2>
+    <!-- Header -->
+    <h1>Shadow Path Prototype</h1>
     <p>
-      Shadow Path is an experimental mechanic prototype built in Unity. The core idea: the player can move
-      <strong>only inside shadows</strong>, and must manipulate the world to cast new paths. This demo consists of three
-      small handcrafted levels, each introducing a new mechanic layered on top of the previous one.
+      A puzzle system built around manipulating <strong>time of day</strong> and <strong>sun direction</strong> to create walkable
+      paths made from shadows. This includes three showcase levels demonstrating rotation mechanics,
+      dynamic shadow traversal, and an expanding tower system.
     </p>
-  </section>
 
-  <!-- Level 1 -->
-  <section class="project-section">
-    <h2>Level 1 — Rotating Stage & Time‑of‑Day Control</h2>
-    <p>
-      The first level focuses on teaching the player how shadow-based traversal works. The core interactions are:
-    </p>
-    <ul>
-      <li><strong>A / D</strong>: Rotate the entire stage to change how obstacles cast shadows.</li>
-      <li><strong>W / S</strong>: Shift the time of day, altering the sun angle and shadow length.</li>
-      <li>Movement is allowed only inside the shaded areas.</li>
-    </ul>
+    <!-- Section 1 -->
+    <h2>1. Level 1 — Time of Day Control & Stage Rotation</h2>
+    <div class="card">
+      <p>
+        The first level introduces the core ideas:
+        <br><br>
+        • Rotate the entire stage using <strong>A / D</strong> keys.<br>
+        • Change the time of day using <strong>W / S</strong> keys, which adjusts the sun angle in real time.<br>
+        • Shadows stretch, shrink, and reposition dynamically, creating new traversal paths.
+        <br><br>
+        This level proves the core mechanic: the player doesn’t move the character — they move the world
+        and the light to make progress.
+      </p>
 
-    <div class="video-container">
-      <video autoplay muted loop playsinline>
-        <source src="https://github.com/SuhaDineshS/SuhaDineshS.github.io/releases/download/v1.1.0/Shadow1.mp4" type="video/mp4" />
-      </video>
+      <video autoplay loop muted playsinline
+        src="https://github.com/SuhaDineshS/SuhaDineshS.github.io/releases/download/v1.1.0/Shadow1.mp4"></video>
     </div>
 
-    <p>
-      This level demonstrates the foundational logic: shadow projection, directional light manipulation, and
-      boundary-based player movement.
-    </p>
-  </section>
+    <!-- Section 2 -->
+    <h2>2. Level 2 — Complex Shadow Navigation</h2>
+    <div class="card">
+      <p>
+        The second level expands on the core mechanic by designing more intricate shadow paths. The player must:
+        <br><br>
+        • Adjust rotation and time of day in combination.<br>
+        • Align shadows to bridge between floating platforms.<br>
+        • Solve using indirect character control — the environment becomes the controller.
+      </p>
 
-  <!-- Level 2 -->
-  <section class="project-section">
-    <h2>Level 2 — Advanced Shadow Navigation</h2>
-    <p>
-      In the second level, the environment layout emphasizes a different use of the mechanic. Instead of simple
-      rotations, the player must strategically combine lighting changes and environmental geometry to reach distant
-      platforms.
-    </p>
-
-    <div class="video-container">
-      <video autoplay muted loop playsinline>
-        <source src="assets/Shadow2.mp4" type="video/mp4" />
-      </video>
+      <video autoplay loop muted playsinline src="assets/Shadow2.mp4"></video>
     </div>
 
-    <p>
-      This level showcases more complex shadow logic and how simple geometry can create emergent puzzle paths.
-    </p>
-  </section>
+    <!-- Section 3 -->
+    <h2>3. Level 3 — Expanding Tower Mechanic</h2>
+    <div class="card">
+      <p>
+        This level introduces a new mechanic: <strong>expandable towers</strong> that rise to complete shadow paths.
+        <br><br>
+        The player can position the shadows precisely, but sometimes the world geometry must be modified.
+        These towers act as adjustable platforms that complete otherwise impossible shadow routes.
+      </p>
 
-  <!-- Level 3 -->
-  <section class="project-section">
-    <h2>Level 3 — Expanding Tower Mechanic</h2>
-    <p>
-      The final level introduces a new system: an <strong>expandable tower</strong> that rises to connect shadow paths.
-      The player must extend or contract the tower while adjusting the sunlight angle to cast a continuous shaded
-      walkway leading to the goal.
-    </p>
-
-    <div class="video-container">
-      <video autoplay muted loop playsinline>
-        <source src="https://github.com/SuhaDineshS/SuhaDineshS.github.io/releases/download/v1.1.2/Shadow3.mp4" type="video/mp4" />
-      </video>
+      <video autoplay loop muted playsinline
+        src="https://github.com/SuhaDineshS/SuhaDineshS.github.io/releases/download/v1.1.2/Shadow3.mp4"></video>
     </div>
 
-    <p>
-      This demonstrates the layering of mechanics and system interactions — dynamic geometry + real‑time lighting.
-    </p>
-  </section>
+    <!-- Back link -->
+    <a href="index.html#projects" class="back-btn">← Back to Projects</a>
 
-  <footer class="project-footer">
-    <a href="index.html" class="btn">Back to Portfolio</a>
-  </footer>
+  </div>
 </body>
 </html>

@@ -7,7 +7,7 @@
 
   <style>
     :root{
-      --bg:#0b0b0e;--card:#0f1114;--muted:#9aa3b2;--accent:#00e6a8;--glass:rgba(255,255,255,0.03);
+      --bg:#0b0b0e;--card:#0f1114;--muted:#9aa3b2;--accent:#00e6a8;
       --mono:'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
     body{
@@ -15,12 +15,10 @@
       background:linear-gradient(180deg,#050506 0%, #0b0b0e 100%);
       color:#e6eef6;
     }
-    .container{
-      max-width:900px; margin:40px auto; padding:20px;
-    }
+    .container{ max-width:900px; margin:40px auto; padding:20px; }
 
-    h1{ font-size:32px; margin-bottom:10px; }
-    h2{ margin-top:40px; }
+    h1{ font-size:32px; margin-bottom:8px; }
+    h2{ margin-top:38px; }
 
     p{ color:var(--muted); line-height:1.6; }
 
@@ -37,13 +35,12 @@
       width:100%;
       border-radius:12px;
       margin-top:12px;
-      object-fit:contain;
       background:#000;
     }
 
     .back-btn{
       display:inline-block;
-      margin-top:30px;
+      margin-top:36px;
       padding:10px 14px;
       border-radius:8px;
       border:1px solid rgba(255,255,255,0.08);
@@ -57,47 +54,85 @@
 <body>
   <div class="container">
 
-    <!-- Header -->
     <h1>Ragdoll Blending System</h1>
-    <p>A physics-driven character system demonstrating limb-based impacts, ragdoll takeover, and animation recovery.</p>
+    <p>A physics-driven gameplay prototype focused on limb-based force application, ragdoll takeover, and animation recovery.</p>
 
-    <!-- Section 1: Ragdoll Explanation -->
-    <h2>1. Click-to-Ragdoll with Limb-Specific Impacts</h2>
+    <!-- Overview -->
     <div class="card">
+      <h2>Project Overview</h2>
+
       <p>
-        The zombie normally walks toward the camera with AI-driven locomotion.  
-        When the player clicks on the character, the system raycasts to find the exact limb hit.  
-        A directional force is then applied specifically to that rigidbody — not the root — producing natural,
-        physically accurate reactions.
-        <br><br>
-        The character collapses fully into ragdoll mode, letting Unity’s physics simulation take over until recovery.
+        <strong>Genre:</strong> Gameplay System Prototype<br>
+        <strong>Platform:</strong> PC (Unity)
       </p>
 
-      <!-- Thumbnail video -->
+      <p>
+        A reactive character system where animation and physics blend  
+        seamlessly based on player interaction and real-time forces.
+      </p>
+
+      <p>
+        <strong>Key Roles (Solo Project)</strong><br>
+        • Implemented limb-specific raycast detection<br>
+        • Built full ragdoll transition system<br>
+        • Designed recovery logic based on fall direction<br>
+        • Tuned forces for realistic physical feedback
+      </p>
+
+      <p><strong>Tools Used:</strong> Unity · Blender · C#</p>
+    </div>
+
+    <!-- Mechanics -->
+    <h2>Core Mechanics</h2>
+    <div class="card">
+      <p>
+        • Limb-specific impacts based on raycast hits<br>
+        • Dynamic force application to individual rigidbodies<br>
+        • Full-body collapse with animation-to-physics blending<br>
+        • Fall direction detection (face-up vs face-down)<br>
+        • Smooth re-entry into locomotion animations
+      </p>
+    </div>
+
+    <!-- Challenges -->
+    <h2>Challenges Faced</h2>
+    <div class="card">
+      <p>
+        • Achieving realistic physical feedback without instability<br>
+        • Creating smooth ragdoll-to-animation transitions<br>
+        • Maintaining consistent movement direction after standing up
+      </p>
+    </div>
+
+    <!-- Takeaways -->
+    <h2>Key Takeaways</h2>
+    <div class="card">
+      <p>
+        • Strong understanding of Unity’s humanoid rigs<br>
+        • Experience building hybrid animation–physics systems<br>
+        • Learned the importance of precise blending and timing
+      </p>
+    </div>
+
+    <!-- FOOTAGE SECTION -->
+    <h2>Project Footage</h2>
+
+    <div class="card">
+      <h3>Video 1 — Limb Impact Demonstration</h3>
+      <p>This clip shows limb-specific force application and the ragdoll entering full physics mode after impact.</p>
       <video autoplay loop muted playsinline src="assets/Ragdoll1.mp4"></video>
     </div>
 
-    <!-- Section 2: Recovery System -->
-    <h2>2. Recovery: Detecting Fall Direction & Standing Up</h2>
     <div class="card">
+      <h3>Video 2 — Fall Detection & Recovery</h3>
       <p>
-        After a short configurable delay, the system evaluates whether the character has fallen
-        face-up or face-down by checking the ragdoll's hip orientation.
-        <br><br>
-        Based on this, it selects and plays the appropriate stand-up animation clip.
-        A smooth blend drives the transition from ragdoll physics back into animator control,
-        allowing the zombie to resume walking and continue chasing the player.
+        Demonstrates face-up vs face-down recovery, with a smooth transition back into normal animation.
       </p>
-
-      <!-- Full-resolution video from GitHub Release -->
-      <video autoplay loop muted playsinline
-             src="https://github.com/SuhaDineshS/SuhaDineshS.github.io/releases/download/v1.0.0/Ragdoll2.mp4">
-      </video>
+      <video autoplay loop muted playsinline 
+        src="https://github.com/SuhaDineshS/SuhaDineshS.github.io/releases/download/v1.0.0/Ragdoll2.mp4"></video>
     </div>
 
-    <!-- Back link -->
     <a href="index.html#projects" class="back-btn">← Back to Projects</a>
-
   </div>
 </body>
 </html>

@@ -105,15 +105,51 @@
 
 <!-- Shooter / Itch.io Project -->
 <div class="project-card">
-<div class="thumb">
-<video autoplay muted loop playsinline>
-<source src="assets/shooter_thumb.mp4" type="video/mp4" />
-</video>
+  <div class="thumb" style="position:relative; overflow:hidden; height:160px; border-radius:8px;">
+
+    <!-- Slideshow container -->
+    <div id="fps-slideshow" style="width:100%; height:100%; position:relative;">
+      <img src="assets/FPS1.png" class="fps-slide active" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:1; transition:opacity .6s;">
+      <img src="assets/FPS2.png" class="fps-slide" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0; transition:opacity .6s;">
+      <img src="assets/FPS3.png" class="fps-slide" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0; transition:opacity .6s;">
+      <img src="assets/FPS4.png" class="fps-slide" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0; transition:opacity .6s;">
+      <img src="assets/FPS5.png" class="fps-slide" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0; transition:opacity .6s;">
+
+      <!-- Arrows -->
+      <div onclick="prevFPS()" style="position:absolute; top:50%; left:10px; transform:translateY(-50%); background:rgba(0,0,0,0.35); padding:6px 10px; border-radius:6px; cursor:pointer; font-size:18px;">&#10094;</div>
+      <div onclick="nextFPS()" style="position:absolute; top:50%; right:10px; transform:translateY(-50%); background:rgba(0,0,0,0.35); padding:6px 10px; border-radius:6px; cursor:pointer; font-size:18px;">&#10095;</div>
+    </div>
+
+  </div>
+
+  <h3>FPS Prototype</h3>
+  <p>A fast-paced first-person shooter prototype focusing on recoil, feel, and weapon feedback.</p>
+  <a href="https://suhadineshs.itch.io/space-pests" class="btn" target="_blank">Play on Itch.io</a>
 </div>
-<h3>FPS Prototype</h3>
-<p>A fast-paced first-person shooter prototype focusing on recoil, feel, and weapon feedback.</p>
-<a href="https://itch.io" class="btn" target="_blank">Play on Itch.io</a>
-</div>
+
+<script>
+  let fpsIndex = 0;
+  const fpsSlides = document.querySelectorAll("#fps-slideshow .fps-slide");
+
+  function showFPS(i) {
+    fpsSlides.forEach(s => s.style.opacity = 0);
+    fpsSlides[i].style.opacity = 1;
+  }
+
+  function nextFPS() {
+    fpsIndex = (fpsIndex + 1) % fpsSlides.length;
+    showFPS(fpsIndex);
+  }
+
+  function prevFPS() {
+    fpsIndex = (fpsIndex - 1 + fpsSlides.length) % fpsSlides.length;
+    showFPS(fpsIndex);
+  }
+
+  // Auto-rotate every 3 seconds
+  setInterval(nextFPS, 3000);
+</script>
+
 
     </div>
 

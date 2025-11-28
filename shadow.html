@@ -7,22 +7,19 @@
 
   <style>
     :root{
-      --bg:#0b0b0e;--card:#0f1114;--muted:#9aa3b2;--accent:#00e6a8;--glass:rgba(255,255,255,0.03);
+      --bg:#0b0b0e;--card:#0f1114;--muted:#9aa3b2;--accent:#00e6a8;
       --mono:'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
-
     body{
       margin:0; font-family:var(--mono);
       background:linear-gradient(180deg,#050506 0%, #0b0b0e 100%);
       color:#e6eef6;
     }
+    .container{ max-width:900px; margin:40px auto; padding:20px; }
 
-    .container{
-      max-width:900px; margin:40px auto; padding:20px;
-    }
-
-    h1{ font-size:32px; margin-bottom:10px; }
-    h2{ margin-top:40px; }
+    h1{ font-size:32px; margin-bottom:8px; }
+    h2{ margin-top:38px; }
+    h3{ margin-top:10px; }
 
     p{ color:var(--muted); line-height:1.6; }
 
@@ -32,20 +29,18 @@
       border-radius:12px;
       padding:20px;
       margin-top:16px;
-      backdrop-filter:blur(4px);
     }
 
     video{
       width:100%;
       border-radius:12px;
       margin-top:12px;
-      object-fit:contain;
       background:#000;
     }
 
     .back-btn{
       display:inline-block;
-      margin-top:30px;
+      margin-top:36px;
       padding:10px 14px;
       border-radius:8px;
       border:1px solid rgba(255,255,255,0.08);
@@ -59,59 +54,96 @@
 <body>
   <div class="container">
 
-    <!-- Header -->
     <h1>Shadow Path Prototype</h1>
-    <p>
-      A puzzle system built around manipulating <strong>time of day</strong> and <strong>sun direction</strong> to create walkable
-      paths made from shadows. This includes three showcase levels demonstrating rotation mechanics,
-      shadow path detection, and an expanding tower system.
-    </p>
+    <p>A puzzle mechanic centered around manipulating sunlight direction and rotating the world to create walkable shadow paths.</p>
 
-    <!-- Section 1 -->
-    <h2>1. Level 1 — Time of Day Control & Stage Rotation</h2>
+    <!-- Overview -->
     <div class="card">
+      <h2>Project Overview</h2>
+
       <p>
-        The first level introduces the core ideas:
-        <br><br>
-        • Rotate the entire stage using <strong>A / D</strong> keys.<br>
-        • Change the time of day using <strong>W / S</strong> keys, which adjusts the sun angle in real time.<br>
-        • Shadows stretch, shrink, and reposition dynamically, creating new traversal paths.
-        <br><br>
-        This level proves the core mechanic: the player doesn’t move the character — they move the world
-        and the light to make a path and press <strong>Space</strong> which moves the character to the goal automatically if a path exists.
+        <strong>Genre:</strong> Puzzle / Experimental<br>
+        <strong>Platform:</strong> PC (Unity)
       </p>
 
-      <video autoplay loop muted playsinline
+      <p>
+        A mechanic-first prototype exploring new ways to solve puzzles by shaping shadows
+        rather than moving the player character.
+      </p>
+
+      <p>
+        <strong>Key Roles (Solo Project)</strong><br>
+        • Designed daylight simulation and shadow logic<br>
+        • Built 3 gameplay levels introducing new mechanics<br>
+        • Implemented rotation and auto-walk systems<br>
+        • Developed raycast-based shadow pathfinding
+      </p>
+
+      <p><strong>Tools Used:</strong> Unity · C# · Blender</p>
+    </div>
+
+    <!-- Mechanics -->
+    <h2>Core Mechanics</h2>
+    <div class="card">
+      <p>
+        • Rotate the entire stage using A / D<br>
+        • Change time of day using W / S<br>
+        • Shadows dynamically form walkable paths<br>
+        • Press Space → Auto-walk to goal when path exists<br>
+        • Expandable towers that modify geometry in Level 3
+      </p>
+    </div>
+
+    <!-- Challenges -->
+    <h2>Challenges Faced</h2>
+    <div class="card">
+      <p>
+        • Accurate ray-based shadow sampling<br>
+        • Making shadow paths readable and predictable<br>
+        • Creating levels that gradually teach mechanics
+      </p>
+    </div>
+
+    <!-- Takeaways -->
+    <h2>Key Takeaways</h2>
+    <div class="card">
+      <p>
+        • Learned lighting-driven level design<br>
+        • Developed mechanic-first puzzle structuring<br>
+        • Experience with dynamic world systems & ray logic
+      </p>
+    </div>
+
+    <!-- FOOTAGE SECTION -->
+    <h2>Project Footage</h2>
+
+    <div class="card">
+      <h3>Video 1 — Level 1: Rotation & Time of Day</h3>
+      <p>
+        Demonstrates how rotating the stage and adjusting the sun angle creates new shadow paths.
+      </p>
+      <video autoplay loop muted playsinline 
         src="https://github.com/SuhaDineshS/SuhaDineshS.github.io/releases/download/v1.1.0/Shadow1.mp4"></video>
     </div>
 
-    <!-- Section 2 -->
-    <h2>2. Level 2 — Harder Shadow Navigation</h2>
     <div class="card">
+      <h3>Video 2 — Level 2: Complex Shadow Navigation</h3>
       <p>
-        The second level expands on the core mechanic by designing a more indirect path. The player must adjust rotation and time of day in combination to make the required path.
+        A tougher level requiring precise timing between rotation and sun angle manipulation.
       </p>
-
       <video autoplay loop muted playsinline src="assets/Shadow2.mp4"></video>
     </div>
 
-    <!-- Section 3 -->
-    <h2>3. Level 3 — Expanding Tower Mechanic</h2>
     <div class="card">
+      <h3>Video 3 — Level 3: Expanding Tower Mechanic</h3>
       <p>
-        This level introduces a new mechanic: <strong>expandable towers</strong> that rise to complete shadow paths.
-        <br><br>
-        The player can position the shadows precisely, but sometimes the world geometry must be modified.
-        These towers act as adjustable platforms that complete otherwise impossible shadow routes.
+        Introduces an expanding tower used to complete broken shadow paths and reach the goal.
       </p>
-
-      <video autoplay loop muted playsinline
+      <video autoplay loop muted playsinline 
         src="https://github.com/SuhaDineshS/SuhaDineshS.github.io/releases/download/v1.1.2/Shadow3.mp4"></video>
     </div>
 
-    <!-- Back link -->
     <a href="index.html#projects" class="back-btn">← Back to Projects</a>
-
   </div>
 </body>
 </html>
